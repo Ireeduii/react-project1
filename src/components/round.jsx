@@ -1,8 +1,7 @@
 export const Round = () => {
   return (
-    <div className=" w-30 h-30  flex gap-4 justify-center items-center rounded-full bg-pink-300">
+    <div className="h-25 w-25 rounded-full bg-indigo-400 text-black font-semibold flex justify-center items-center">
       Round
     </div>
   );
 };
-// export default Round;
