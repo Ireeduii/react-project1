@@ -1,5 +1,8 @@
-export * from "./box";
-export * from "./round";
-// export * from "./text";
-// export * from "./image";
+export * from "./boxround";
+export * from "./nike";
+
+export * from "./sandal";
+export * from "./blognavbar";
+export * from "./blogcard";
+
 // export * from "./button";

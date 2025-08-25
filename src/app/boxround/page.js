@@ -1,12 +1,10 @@
-import { Box, Round } from "@/components";
+import { Box } from "@/components";
 const Home = () => {
   return (
     <div className="ml-4 mt-6 flex flex-col gap-2">
+      <Box color="pink" isBox={true}></Box>
       <Box></Box>
-      <Round></Round>
-      <Box></Box>
-      <Box></Box>
-      <Round></Round>
+      <Box color="pink" isBox={true}></Box>
       <Box></Box>
     </div>
   );
