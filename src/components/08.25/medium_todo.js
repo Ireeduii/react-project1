@@ -17,14 +17,14 @@ export const MediumToDoList = () => {
     setTodos(newTodos);
   };
   return (
-    <div className="border w-60 h-40 text-center mt-10 ml-10 rounded-2xl bg-indigo-100 pt-3">
-      <h2 className="font-semibold">Todo List</h2>
+    <div className="border w-30 h-30 text-center rounded-2xl bg-indigo-100 pt-3">
+      <h2>Todo List</h2>
       <div>
         <input
           onChange={handleOnChange}
           type="text"
           placeholder="typing..."
-          className="mt-2"
+          className="mt-2 w-20"
         ></input>
         <button onClick={handleAddTodo} className="pl-2">
           Add
