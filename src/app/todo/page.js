@@ -1,14 +1,23 @@
+"use client";
+import { useState } from "react";
+
 import { AddButton } from "@/components";
+import { Buttons } from "@/components/todobtns";
 import { Input } from "@/components/todoInput";
-import { Task } from "@/components/todotask";
+// import { useState } from "react";
+
 const Home = () => {
-  const task = {
-    taskName: "clean a home",
-    isCompleted: false,
+  const [inputValue, setInputValue] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("All");
+
+  const handleAddToDo = () => {
+    setTodos([...todos, { title: inputValue, isDone: false }]);
   };
+
   return (
     <div>
-      <Task taskName={task.taskName} isCompleted={task.isCompleted}></Task>
+      {/* <Task taskName={task.taskName} isCompleted={task.isCompleted}></Task> */}
       <div className="bg-gray-100 w-full h-screen flex justify-center items-center">
         <div className="w-[380px] h-[300px] border rounded-md shadow-xl bg-white p-6">
           <h1 className="font-semibold text-black text-xl text-center mb-4">
@@ -20,17 +29,7 @@ const Home = () => {
             <AddButton></AddButton>
           </div>
 
-          <div className="flex gap-2 mb-4">
-            <button className="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700">
-              All
-            </button>
-            <button className="px-3 py-1 rounded bg-gray-100 text-black ">
-              Active
-            </button>
-            <button className="px-3 py-1 rounded bg-gray-100 text-black">
-              Completed
-            </button>
-          </div>
+          <Buttons></Buttons>
 
           <p className="text-[#6B7280] text-center text-[17px] mt-6 m">
             No tasks yet. Add one above!
