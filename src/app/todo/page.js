@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 
+<<<<<<< HEAD
 import { Input } from "@/components/todoInput";
 import { Buttons } from "@/components/todobtns";
 import { AddButton } from "@/components/todoaddbtn";
@@ -28,9 +29,28 @@ const ToDo = () => {
     setTodos([...todos, { text: inputValue, Completed: true }]);
     setInputValue("");
     // input hoosloh
+=======
+import { AddButton } from "@/components";
+import { Buttons } from "@/components/todobtns";
+import { Input } from "@/components/todoInput";
+// import { useState } from "react";
+
+const Home = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("All");
+
+  const handleAddToDo = () => {
+    setTodos([...todos, { title: inputValue, isDone: false }]);
+>>>>>>> ebe2202078d4481db1d44752c3d776e78c009633
   };
+
   return (
     <div>
+<<<<<<< HEAD
+=======
+      {/* <Task taskName={task.taskName} isCompleted={task.isCompleted}></Task> */}
+>>>>>>> ebe2202078d4481db1d44752c3d776e78c009633
       <div className="bg-gray-100 w-full h-screen flex justify-center items-center">
         <div className="w-[380px] h-[300px] border rounded-md shadow-xl bg-white p-6">
           <h1 className="font-semibold text-black text-xl text-center mb-4">
@@ -45,9 +65,14 @@ const ToDo = () => {
             />
             <AddButton onClick={handleOnClick}>Add</AddButton>
           </div>
+<<<<<<< HEAD
           <div>
             <Buttons></Buttons>
           </div>
+=======
+
+          <Buttons></Buttons>
+>>>>>>> ebe2202078d4481db1d44752c3d776e78c009633
 
           <p className="text-[#6B7280] text-center text-[17px] mt-6 m">
             No tasks yet. Add one above!
