@@ -1,14 +1,36 @@
-import { AddButton } from "@/components";
+"use client";
+import { useState } from "react";
+
 import { Input } from "@/components/todoInput";
-import { Task } from "@/components/todotask";
-const Home = () => {
-  const task = {
-    taskName: "clean a home",
-    isCompleted: false,
+import { Buttons } from "@/components/todobtns";
+import { AddButton } from "@/components/todoaddbtn";
+
+const ToDo = () => {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleAddToDo = () => {
+    setTodos([...todos, inputValue]);
+  };
+
+  const handleDeleteToDo = (index) => {
+    const newTodos = todos.filter((el, i) => index !== i);
+    setTodos(newTodos);
+  };
+
+  const handleOnClick = () => {
+    if (inputValue.trim() === "") return;
+    // hooson uyd nemehgui
+    setTodos([...todos, { text: inputValue, Completed: true }]);
+    setInputValue("");
+    // input hoosloh
   };
   return (
     <div>
-      <Task taskName={task.taskName} isCompleted={task.isCompleted}></Task>
       <div className="bg-gray-100 w-full h-screen flex justify-center items-center">
         <div className="w-[380px] h-[300px] border rounded-md shadow-xl bg-white p-6">
           <h1 className="font-semibold text-black text-xl text-center mb-4">
@@ -16,20 +38,15 @@ const Home = () => {
           </h1>
 
           <div className="flex items-center gap-2 mb-4">
-            <Input placeholder="Add new task.." />
-            <AddButton></AddButton>
+            <Input
+              onChange={handleOnChange}
+              value={inputValue}
+              placeholder="Add new task..."
+            />
+            <AddButton onClick={handleOnClick}>Add</AddButton>
           </div>
-
-          <div className="flex gap-2 mb-4">
-            <button className="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700">
-              All
-            </button>
-            <button className="px-3 py-1 rounded bg-gray-100 text-black ">
-              Active
-            </button>
-            <button className="px-3 py-1 rounded bg-gray-100 text-black">
-              Completed
-            </button>
+          <div>
+            <Buttons></Buttons>
           </div>
 
           <p className="text-[#6B7280] text-center text-[17px] mt-6 m">
@@ -44,4 +61,7 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default ToDo;
+// let text = "   hi   ";
+// console.log(text);
+// console.log(text.trim());
