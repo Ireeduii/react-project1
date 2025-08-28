@@ -1,8 +1,8 @@
-export * from "./boxround";
-export * from "./nike";
-export * from "./sandal";
-export * from "./blognavbar";
-export * from "./blogcard";
+export * from "./projects/boxround";
+export * from "./projects/nike";
+export * from "./projects/sandal";
+export * from "./projects/blognavbar";
+export * from "./projects/blogcard";
 
 // export * from "./easy_counter";
 // export * from "./easy_field";
